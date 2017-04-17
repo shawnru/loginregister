@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>index</title>
+  </head>
+  <body>
+    <p>Thanks for submitting this form! You have submitted {{ request.session.counter }} times~</p>
+    <p>{{ request.session.name }}</p>
+    <p>{{ request.session.dloc }}</p>
+    <p>{{ request.session.favlang }}</p>
+    <p>{{ request.session.comments }}</p>
+    <a href='/'>Go Back!</a>
+  </body>
+</html>
