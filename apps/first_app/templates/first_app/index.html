@@ -5,24 +5,26 @@
     <title>index</title>
   </head>
   <body>
-    <form id="inputform" action='/postresult' method='post'>
+    {% for error in messages %}
+    <p>{{ error }}</p>
+    {% endfor %}
+    <!-- {% for a in all_users %}
+    <p>{{ a.email }} {{ a.password }}</p>
+    {% endfor %} -->
+    <form id="a" action='/register' method='POST'>
       {% csrf_token %}
-      <p>Name:<input type='text' name='name'>
-      <p>Dojo Location:
-        <select name='dloc'>
-          <option value="Seattle">Seattle</option>
-          <option value="San Jose">San Jose</option>
-          <option value="Dallas">Dallas</option>
-        </select>
-      <p>Favorite Language:
-        <select name='favlang'>
-          <option value="JavaScript">JavaScript</option>
-          <option value="Python">Python</option>
-          <option value="HTML">HTML</option>
-        </select></p>
-      <p>Comments (optional):</p>
-      <p><input type='text' name='comments'></p>
-      <input type='submit' name='submit' value='Submit'>
+      <p>First name:<input type='text' name='first_name'></p>
+      <p>Last name:<input type='text' name='last_name'></p>
+      <p>Email:<input type='text' name='email'></p>
+      <p>Password:<input type='password' name='password' value='password1'></p>
+      <p>Confirm password:<input type='password' name='confirmpw' value='password1'></p>
+      <input type='submit' name='register' value='Register'>
+    </form>
+    <form id="ab" action='/login' method='POST'>
+      {% csrf_token %}
+      <p>Email:<input type='text' name='email'></p>
+      <p>Password:<input type='password' name='password'></p>
+      <input type='submit' name='login' value='Log In'>
     </form>
   </body>
 </html>
